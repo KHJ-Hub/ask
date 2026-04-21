@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>학생 질문 게시판</title>
+    <style>
+        /* 전체 화면 기본 설정 */
+        body { 
+            font-family: 'Apple SD Gothic Neo', "Malgun Gothic", "Segoe UI", Roboto, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f7f6; 
+            height: 100vh; /* 화면 높이를 정확히 100%로 맞춤 */
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden; /* 겉 화면 이중 스크롤 방지 */
+        }
+        
+        /* 상단 헤더(안내문) 디자인 - 깔끔하고 신뢰감 있게 */
+        .header {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 15px 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            z-index: 10;
+            flex-shrink: 0; /* 화면이 좁아져도 헤더 크기는 유지 */
+        }
+        .header h1 { 
+            color: #2c3e50; 
+            font-size: 1.4em; 
+            margin: 0 0 5px 0;
+            letter-spacing: -0.5px;
+        }
+        .header p {
+            color: #7f8c8d;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* 패들렛이 들어갈 공간 */
+        .padlet-container {
+            flex-grow: 1; /* 상단 헤더를 제외한 나머지 화면을 모두 차지 */
+            width: 100%;
+            background-color: #F4F4F4;
+        }
+
+        /* 패들렛 삽입 코드 강제 크기 보정 (빈틈없이 화면에 꽉 차게) */
+        .padlet-container .padlet-embed {
+            height: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            border: none !important; 
+        }
+        .padlet-container .padlet-embed > p {
+            flex-grow: 1 !important;
+            display: flex !important;
+        }
+        .padlet-container iframe {
+            height: 100% !important;
+            width: 100% !important;
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>👨‍🏫 수업 Q&A 게시판</h1>
+        <p>질문이 있다면 <strong>+ 버튼</strong>을 눌러주세요! (로그인 시 이름이 자동 입력됩니다)</p>
+    </div>
+
+    <div class="padlet-container">
+        <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/ivs1z46hvamjkzs3" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;padding:8px 8px 8px 0"><a href="https://padlet.com?ref=embed" style="display:flex;align-items:center;gap:5px;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><span aria-hidden style="color:#9E9E9E;font-size:10px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1">Made with</span><img src="https://padlet.net/emails/padlet_email_logo_2026_text-dark-200.png" height="12" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none;display:block" alt="Padlet으로 만듦"></a></div></div>
+        </div>
+
+</body>
+</html>
